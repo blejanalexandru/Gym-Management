@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SalaFitness",
+    "type": "object",
+    "properties": {
+      "SalaFitness": {
+        "type": "object",
+        "properties": {
+          "Clienti": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "Nume", "CNP", "Telefon", "Email", "Abonament"],
+              "properties": {
+                "id": { "type": "string" },
+                "Nume": { "type": "string" },
+                "CNP": { "type": "string", "pattern": "^[0-9]{13}$" },
+                "Telefon": { "type": "string" },
+                "Email": { "type": "string", "format": "email" },
+                "Abonament": {
+                  "type": "object",
+                  "required": ["tip", "dataInceput", "dataExpirare"],
+                  "properties": {
+                    "tip": {
+                      "type": "string",
+                      "enum": ["lunar", "trimestrial", "anual"]
+                    },
+                    "dataInceput": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "dataExpirare": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Antrenori": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "Nume", "Specializari"],
+              "properties": {
+                "id": { "type": "string" },
+                "Nume": { "type": "string" },
+                "Specializari": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          },
+          "Clase": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "Denumire", "AntrenorID", "Capacitate", "Zi", "Ora", "Sala"],
+              "properties": {
+                "id": { "type": "string" },
+                "Denumire": { "type": "string" },
+                "AntrenorID": { "type": "string" },
+                "Capacitate": { "type": "integer", "minimum": 1 },
+                "Zi": { "type": "string" },
+                "Ora": { "type": "string", "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" },
+                "Sala": { "type": "string" }
+              }
+            }
+          },
+          "Programari": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "ClientID", "ClasaID", "Data"],
+              "properties": {
+                "id": { "type": "string" },
+                "ClientID": { "type": "string" },
+                "ClasaID": { "type": "string" },
+                "Data": { "type": "string", "format": "date" }
+              }
+            }
+          }
+        },
+        "required": ["Clienti", "Antrenori", "Clase", "Programari"]
+      }
+    },
+    "required": ["SalaFitness"]
+  }
+  

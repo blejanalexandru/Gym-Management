@@ -1,0 +1,122 @@
+{
+  "SalaFitness": {
+    "Clienti": [
+      {
+        "id": "C001",
+        "Nume": "Popescu Andrei",
+        "CNP": "0590805123456",
+        "Telefon": "0720123456",
+        "Email": "andrei.popescu@email.com",
+        "Abonament": {
+          "tip": "lunar",
+          "dataInceput": "2025-04-01",
+          "dataExpirare": "2025-04-30"
+        }
+      },
+      {
+        "id": "C002",
+        "Nume": "Marcu Robert",
+        "CNP": "0590123423456",
+        "Telefon": "0720123777",
+        "Email": "marcu.robert@email.com",
+        "Abonament": {
+          "tip": "anual",
+          "dataInceput": "2025-03-21",
+          "dataExpirare": "2026-03-21"
+        }
+      },
+      {
+        "id": "C003",
+        "Nume": "Irimia Andrei",
+        "CNP": "0502022423456",
+        "Telefon": "072888777",
+        "Email": "irimia.andrei@email.com",
+        "Abonament": {
+          "tip": "lunar",
+          "dataInceput": "2025-01-20",
+          "dataExpirare": "2025-02-20"
+        }
+      }
+    ],
+    "Antrenori": [
+      {
+        "id": "A001",
+        "Nume": "Ionescu Maria",
+        "Specializari": [
+          "Yoga",
+          "Pilates"
+        ]
+      },
+      {
+        "id": "A002",
+        "Nume": "Barbu Andrei",
+        "Specializari": [
+          "Fotbal",
+          "Recuperare"
+        ]
+      },
+      {
+        "id": "A003",
+        "Nume": "Fetoiu Mihai",
+        "Specializari": [
+          "Aerobic"
+        ]
+      }
+    ],
+    "Clase": [
+      {
+        "id": "CL001",
+        "Denumire": "Yoga începători",
+        "AntrenorID": "A001",
+        "Capacitate": 15,
+        "Zi": "Luni",
+        "Ora": "18:00",
+        "Sala": "Sala 1"
+      },
+      {
+        "id": "CL002",
+        "Denumire": "Recuperare neuromotorie",
+        "AntrenorID": "A002",
+        "Capacitate": 15,
+        "Zi": "Marti",
+        "Ora": "7:00",
+        "Sala": "Sala 1"
+      },
+      {
+        "id": "CL003",
+        "Denumire": "Aerobic avansati",
+        "AntrenorID": "A003",
+        "Capacitate": 15,
+        "Zi": "Vineri",
+        "Ora": "20:00",
+        "Sala": "Sala 1"
+      }
+    ],
+    "Programari": [
+      {
+        "id": "P001",
+        "ClientID": "C001",
+        "ClasaID": "CL001",
+        "Data": "2025-04-15"
+      },
+      {
+        "id": "P002",
+        "ClientID": "C001",
+        "ClasaID": "CL002",
+        "Data": "2025-04-15"
+      },
+      {
+        "id": "P003",
+        "ClientID": "C003",
+        "ClasaID": "CL002",
+        "Data": "2025-04-11"
+      },
+      {
+        "id": "P004",
+        "ClientID": "C003",
+        "ClasaID": "CL003",
+        "Data": "2025-04-11"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jurnalSustenabilitate persoana="Andrei Popescu" saptamana="2025-05-01">
+    <zi nume="Luni">
+        <activitate tip="reciclare" durata="15">Am sortat plastic și hartie.</activitate>
+        <activitate tip="mers_pe_jos" durata="30">Am mers pe jos pana la facultate.</activitate>
+    </zi>
+    <zi nume="Marti">
+        <activitate tip="cumparaturi_locale" durata="45">Am cumparat legume de la piata.</activitate>
+        <activitate tip="economisire_energie" durata="10">Am stins luminile inutile.</activitate>
+    </zi>
+    <zi nume="Miercuri">
+        <activitate tip="mers_pe_jos" durata="20">Plimbare in parc in loc de masina.</activitate>
+    </zi>
+    <zi nume="Joi">
+        <activitate tip="sala_de_forta" durata="60">Lucru cu gantere in sala de fitness.</activitate>
+    </zi>
+    <zi nume="Vineri">
+        <activitate tip="cina_sanatoasa" durata="90">Luarea unei cine sanatoase cu familia acasa</activitate>
+    </zi>
+    <zi nume="Sambata">
+        <activitate tip="citit" durata="120">Citirea unei carti de dezvoltare personala</activitate>
+    </zi>
+    <zi nume="Duminica">
+        <activitate tip="citit" durata="90">Citirea unei carti de dezvoltare personala</activitate>
+    </zi>
+   
+</jurnalSustenabilitate>
+
+ <!-- Constrangeri:
+  - in jurnal sa se precizeze numele persoanei
+  - in jurnal sa se precizeze data primei zile din saptamana
+  - sa fie maxim 7 zile (zilele saptamanii)
+  - activitatile sa aiba un anumit tip si durata
+  -->

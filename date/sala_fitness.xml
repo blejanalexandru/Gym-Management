@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="afisare_clienti.xsl"?>
+<SalaFitness xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="sala_fitness.xsd">
+  <Clienti>
+    <Client>
+      <id>C001</id>
+      <Nume>Popescu Andrei</Nume>
+      <CNP>0590805123456</CNP>
+      <Telefon>0720123456</Telefon>
+      <Email>andrei.popescu@email.com</Email>
+      <Abonament>
+        <tip>lunar</tip>
+        <dataInceput>2025-04-01</dataInceput>
+        <dataExpirare>2025-04-30</dataExpirare>
+      </Abonament>
+    </Client>
+    <Client>
+      <id>C002</id>
+      <Nume>Marcu Robert</Nume>
+      <CNP>0590123423456</CNP>
+      <Telefon>0720123777</Telefon>
+      <Email>marcu.robert@email.com</Email>
+      <Abonament>
+        <tip>anual</tip>
+        <dataInceput>2025-03-21</dataInceput>
+        <dataExpirare>2026-03-21</dataExpirare>
+      </Abonament>
+    </Client>
+    <Client><id>C004</id><Nume>Blejan Alexandru</Nume><CNP>501212160016</CNP><Telefon>0755384825</Telefon><Email>alexandru.blejan@gmail.com</Email><Abonament><tip>lunar</tip><dataInceput>2025-04-19</dataInceput><dataExpirare>2025-05-19</dataExpirare></Abonament></Client><Client><id>C005</id><Nume>Ana Maria</Nume><CNP>04123456789</CNP><Telefon>0755384825</Telefon><Email>ana.maria</Email><Abonament><tip>anual</tip><dataInceput>2025-04-19</dataInceput><dataExpirare>2026-04-19</dataExpirare></Abonament></Client></Clienti>
+
+  <Antrenori>
+    <Antrenor>
+      <id>A001</id>
+      <Nume>Ionescu Maria</Nume>
+      <Specializari>
+        <Specializare>Yoga</Specializare>
+        <Specializare>Pilates</Specializare>
+      </Specializari>
+    </Antrenor>
+    <Antrenor>
+      <id>A002</id>
+      <Nume>Barbu Andrei</Nume>
+      <Specializari>
+        <Specializare>Fotbal</Specializare>
+        <Specializare>Recuperare</Specializare>
+      </Specializari>
+    </Antrenor>
+    <Antrenor>
+      <id>A003</id>
+      <Nume>Fetoiu Mihai</Nume>
+      <Specializari>
+        <Specializare>Aerobic</Specializare>
+      </Specializari>
+    </Antrenor>
+  </Antrenori>
+
+  <Clase>
+    <Clasa>
+      <id>CL001</id>
+      <Denumire>Yoga începători</Denumire>
+      <AntrenorID>A001</AntrenorID>
+      <Capacitate>15</Capacitate>
+      <Zi>Luni</Zi>
+      <Ora>18:00</Ora>
+      <Sala>Sala 1</Sala>
+    </Clasa>
+    <Clasa>
+      <id>CL002</id>
+      <Denumire>Recuperare neuromotorie</Denumire>
+      <AntrenorID>A002</AntrenorID>
+      <Capacitate>15</Capacitate>
+      <Zi>Marti</Zi>
+      <Ora>7:00</Ora>
+      <Sala>Sala 1</Sala>
+    </Clasa>
+    <Clasa>
+      <id>CL003</id>
+      <Denumire>Aerobic avansati</Denumire>
+      <AntrenorID>A003</AntrenorID>
+      <Capacitate>15</Capacitate>
+      <Zi>Vineri</Zi>
+      <Ora>20:00</Ora>
+      <Sala>Sala 1</Sala>
+    </Clasa>
+  </Clase>
+
+  <Programari>
+    <Programare>
+      <id>P001</id>
+      <ClientID>C001</ClientID>
+      <ClasaID>CL001</ClasaID>
+      <Data>2025-04-15</Data>
+    </Programare>
+    <Programare>
+      <id>P002</id>
+      <ClientID>C001</ClientID>
+      <ClasaID>CL002</ClasaID>
+      <Data>2025-04-15</Data>
+    </Programare>
+    <Programare>
+      <id>P003</id>
+      <ClientID>C003</ClientID>
+      <ClasaID>CL002</ClasaID>
+      <Data>2025-04-11</Data>
+    </Programare>
+    <Programare>
+      <id>P004</id>
+      <ClientID>C003</ClientID>
+      <ClasaID>CL003</ClasaID>
+      <Data>2025-04-11</Data>
+    </Programare>
+  </Programari>
+</SalaFitness>

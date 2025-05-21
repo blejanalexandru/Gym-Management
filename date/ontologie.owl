@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.stayfitgym.com/ontologie#"
+     xml:base="http://www.stayfitgym.com/ontologie"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="http://www.stayfitgym.com/ontologie"/>
+
+  <!-- Clase -->
+  <owl:Class rdf:about="#Client"/>
+  <owl:Class rdf:about="#Abonament"/>
+  <owl:Class rdf:about="#Antrenor"/>
+  <owl:Class rdf:about="#Clasa"/>
+  <owl:Class rdf:about="#Programare"/>
+  <owl:Class rdf:about="#Specializare"/>
+  <owl:Class rdf:about="#Zi"/>
+  <owl:Class rdf:about="#Sala"/>
+
+  <!-- Proprietăți de obiect -->
+  <owl:ObjectProperty rdf:about="#areAbonament">
+    <rdfs:domain rdf:resource="#Client"/>
+    <rdfs:range rdf:resource="#Abonament"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#tineClasa">
+    <rdfs:domain rdf:resource="#Antrenor"/>
+    <rdfs:range rdf:resource="#Clasa"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#participaLa">
+    <rdfs:domain rdf:resource="#Client"/>
+    <rdfs:range rdf:resource="#Clasa"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#areSpecializare">
+    <rdfs:domain rdf:resource="#Antrenor"/>
+    <rdfs:range rdf:resource="#Specializare"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#esteProgramatLa">
+    <rdfs:domain rdf:resource="#Client"/>
+    <rdfs:range rdf:resource="#Programare"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>

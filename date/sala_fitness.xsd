@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Tip simplu cu restrictie pentru tip abonament -->
+  <xs:simpleType name="TipAbonamentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lunar"/>
+      <xs:enumeration value="anual"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Tip complex de baza pentru o persoana -->
+  <xs:complexType name="PersoanaType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="Nume" type="xs:string"/>
+      <xs:element name="CNP" type="xs:string"/>
+      <xs:element name="Telefon" type="xs:string"/>
+      <xs:element name="Email" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Extindere client cu abonament obligatoriu -->
+  <xs:complexType name="ClientType">
+    <xs:complexContent>
+      <xs:extension base="PersoanaType">
+        <xs:sequence>
+          <xs:element name="Abonament" minOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="tip" type="TipAbonamentType"/>
+                <xs:element name="dataInceput" type="xs:date"/>
+                <xs:element name="dataExpirare" type="xs:date"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Antrenor: trebuie sa aiba cel putin o specializare -->
+  <xs:complexType name="AntrenorType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="Nume" type="xs:string"/>
+      <xs:element name="Specializari">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Specializare" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Clasa: obligatoriu cu AntrenorID -->
+  <xs:complexType name="ClasaType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="Denumire" type="xs:string"/>
+      <xs:element name="AntrenorID" type="xs:string" minOccurs="1"/>
+      <xs:element name="Capacitate" type="xs:positiveInteger"/>
+      <xs:element name="Zi" type="xs:string"/>
+      <xs:element name="Ora" type="xs:string"/>
+      <xs:element name="Sala" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Programare -->
+  <xs:complexType name="ProgramareType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="ClientID" type="xs:string"/>
+      <xs:element name="ClasaID" type="xs:string"/>
+      <xs:element name="Data" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Radacina -->
+  <xs:element name="SalaFitness">
+    <xs:complexType>
+      <xs:sequence>
+
+        <!-- Clienti -->
+        <xs:element name="Clienti">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Client" type="ClientType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Antrenori -->
+        <xs:element name="Antrenori">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Antrenor" type="AntrenorType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Clase -->
+        <xs:element name="Clase">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clasa" type="ClasaType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Programari -->
+        <xs:element name="Programari">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Programare" type="ProgramareType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
